@@ -1,38 +1,106 @@
-.App {
+/* Reset default margin and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Basic setup */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f4f8;
+  overflow: hidden;
+  height: 100vh;
+}
+
+.app {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.title {
+  font-size: 3rem;
+  color: #333;
+  margin-top: 40px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.bubble-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  perspective: 1000px;  /* 3D effect */
+  z-index: 10;
 }
 
-.App-link {
-  color: #61dafb;
+.bubble {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(0, 123, 255, 0.7);
+  animation: bubble-animation 8s ease-in-out infinite;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* 3D Animation for the bubbles */
+@keyframes bubble-animation {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(0deg) scale(0.6);
+    opacity: 0.7;
   }
-  to {
-    transform: rotate(360deg);
+  25% {
+    transform: translate3d(100px, -100px, 100px) rotate(45deg) scale(1);
+    opacity: 1;
   }
+  50% {
+    transform: translate3d(200px, 150px, 200px) rotate(90deg) scale(0.8);
+    opacity: 0.9;
+  }
+  75% {
+    transform: translate3d(50px, -200px, -100px) rotate(135deg) scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(0, 0, 0) rotate(180deg) scale(0.6);
+    opacity: 0.7;
+  }
+}
+
+/* Individual bubble sizes and animation delays */
+.bubble1 {
+  width: 80px;
+  height: 80px;
+  animation-delay: 0s;
+}
+
+.bubble2 {
+  width: 100px;
+  height: 100px;
+  animation-delay: 2s;
+}
+
+.bubble3 {
+  width: 120px;
+  height: 120px;
+  animation-delay: 1s;
+}
+
+.bubble4 {
+  width: 90px;
+  height: 90px;
+  animation-delay: 3s;
+}
+
+.bubble5 {
+  width: 110px;
+  height: 110px;
+  animation-delay: 1.5s;
+}
+
+.bubble6 {
+  width: 130px;
+  height: 130px;
+  animation-delay: 2.5s;
 }
