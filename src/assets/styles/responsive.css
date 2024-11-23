@@ -1,3 +1,4 @@
+/* responsive.css */
 @media (max-width: 768px) {
     .task-item {
       flex-direction: column;
@@ -5,7 +6,18 @@
     }
   
     .actions {
-      margin-top: 5px;
+      margin-top: 10px;
+      display: flex;
+      gap: 5px;
+    }
+  
+    form {
+      flex-direction: column;
+    }
+  
+    form input,
+    form button {
+      width: 100%;
     }
   }
   

@@ -3,6 +3,7 @@ import TaskInput from './components/TaskInput';
 import TaskList from './components/TaskList';
 import Footer from './components/Footer';
 import './assets/styles/global.css';
+import BubbleEffect from './components/BubbleEffect'
 
 const App = () => {
   const [tasks, setTasks] = useState([]);
@@ -34,12 +35,23 @@ const App = () => {
       <h1>To-Do List</h1>
       <TaskInput addTask={addTask} editTask={editTask} currentTask={currentTask} />
       <TaskList
+      
         tasks={tasks}
         deleteTask={deleteTask}
         toggleComplete={toggleComplete}
         setEditTask={setCurrentTask}
       />
+      <BubbleEffect /> 
+      <div className="bubble-container">
+      {/* Adding several bubbles */}
+      <div className="bubble"></div>
+      <div className="bubble"></div>
+      <div className="bubble"></div>
+      <div className="bubble"></div>
+      <div className="bubble"></div>
+      <div className="bubble"></div>
       <Footer />
+    </div>
     </div>
   );
 };
